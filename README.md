@@ -83,7 +83,9 @@ Finally, while the current Calculator uses standard input and output, it should 
 
 Trade-offs
 --------------------
-
+The application currently does not have a "help" command. It would be nice to have one to describe its usage to users.
+Currently ICalculatorService returns a generic String, which can be the result of a successful operation, or an error message. It would be nice for it to respond with a Response object instead, which could contain a ResponseStatus (Success or Error), and a ResponseMessage.
+It would also be good to add a sequence diagram to describe the flow of actions among the different layers more visually.
 
 How to Run
 --------------------
