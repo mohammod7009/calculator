@@ -73,13 +73,13 @@ Reasoning Behind Technical Choices
 --------------------
 Since an operation always occurs on the *most recently entered last two operand numbers*, a Last-In-Last-Out structure (Stack) has been used to keep track of the entered operand numbers.
 As soon as a valid operator sign is entered, the last two operands are removed from the Stack and the operation is applied on them. If the operation is successful, the result, which now becomes the last operand number, is added back to the Stack.
-When the operation fails (for e.g. attempted to devide by zero), the removed operand numbers are put back in the Stack. The Stack essentially makes removing the most recent operands, and restoring them back (after a failed operation), easy.   
+When the operation fails (for e.g. attempted to divide by zero), the removed operand numbers are put back in the Stack. The Stack essentially makes removing the most recent operands, and restoring them back (after a failed operation), easy.   
 
 The RPN-style calculation  has been implemented as a stand-alone service. Other styles of calculations may also be added, provided they implement the calculateExpression method in the ICalculatorService interface.
 
 An OperatorFactory has also been used to abstract out the underlying operational behavior of specific operator types. The factory returns  the  appropriate type of Operator based on the requested operator sign. This should make adding other new operators in future easier.
 
-Finally, while the current Calculator uses standard input and output, it should be possible to re-use the RPNCalculationService with other interfaces too, as long as they invoke the calculateExpression method with the expected input.
+Finally, while the current Calculator uses standard input and output, it should be possible to re-use the RPNCalculatorService with other interfaces too, as long as they invoke the calculateExpression method with the expected input.
 
 Trade-offs
 --------------------

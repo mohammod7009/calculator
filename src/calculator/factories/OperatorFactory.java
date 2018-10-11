@@ -2,7 +2,7 @@ package calculator.factories;
 
 import calculator.services.IOperatorService;
 import calculator.services.impl.OperatorAddService;
-import calculator.services.impl.OperatorDevideService;
+import calculator.services.impl.OperatorDivideService;
 import calculator.services.impl.OperatorMultiplyService;
 import calculator.services.impl.OperatorSubtractService;
 
@@ -35,7 +35,7 @@ public class OperatorFactory {
 			return new OperatorMultiplyService();
 		
 		if (operatorSign.equals("/"))
-			return new OperatorDevideService();
+			return new OperatorDivideService();
 
 		return null; // invalid sign
 	}
