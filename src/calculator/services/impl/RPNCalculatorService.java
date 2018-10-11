@@ -20,7 +20,7 @@ public class RPNCalculatorService implements ICalculatorService {
 		
 		if (input!=null) {
 			
-			System.out.println("input: " + input);
+			// System.out.println("input: " + input);
 
 			String[] tokens = input.trim().split("\\s+");
 			

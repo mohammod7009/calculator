@@ -11,15 +11,18 @@ public class Calculator {
 		
 		ICalculatorService calculator = new RPNCalculatorService();
 
-		Scanner s = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		
-		String line = s.nextLine();		
-
 		// while more input..
-		while (!isEndOfInput(line)) {
+		while (input.hasNext()) {
+
+			String line = input.nextLine();		
+
+			if (isEndOfInput(line))
+				break;
+			
 			String response = calculator.calculateExpression(line);
-			System.out.println("r=" + response);
-			line = s.nextLine();
+			System.out.println(response);
 		}
 		
 		System.out.println("Exited.");		
